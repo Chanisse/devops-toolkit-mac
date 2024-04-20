@@ -15,7 +15,7 @@ check_command_success() {
 
 # Devops toolkit installation
 echo "Starting Devops toolkit installation...\n"
-# brew install tfenv starship pre-commit
+brew install tfenv starship pre-commit
 check_command_success
 
 # Install latest version of Terraform
@@ -49,7 +49,7 @@ disabled = true
 "
 
 # Append the content to the config.toml file
-# echo "$content" >> ~/.config/starship.toml
+echo "$content" >> ~/.config/starship.toml
 
 # Check command success
 check_command_success
