@@ -3,6 +3,7 @@
 This repository is intended to accelerate a developers local setup by:
 1. Automating the installation and configuration of linux command line tools.
 2. Provide guides for installing and configuring tools.
+3. Providing some basic best practices when using the tools.
 
 ## Table of contents
 - [Section 1 - Automation](#section-1---automated-actions)
