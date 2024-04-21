@@ -15,7 +15,7 @@ check_command_success() {
 
 # Devops toolkit installation
 echo "Starting Devops toolkit installation...\n"
-brew install tfenv starship pre-commit
+brew install tfenv starship pre-commit pyenv git tree wget
 check_command_success
 
 # Install latest version of Terraform
