@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Function to check if command was a success
+# Function to check if the last command was successful
 check_command_success() {
     if [ $? -eq 0 ]; then
         echo "Command executed successfully."
@@ -13,26 +13,39 @@ check_command_success() {
     fi
 }
 
+###############################################################################################
 # Devops toolkit installation
-echo "Starting Devops toolkit installation...\n"
+echo "----------------- Starting Devops toolkit installation...----------------- "
+###############################################################################################
 brew install tfenv starship pre-commit pyenv git tree wget
+# Check command success
 check_command_success
-
+# Echo to user
+echo "Installation of 'tfenv starship pre-commit pyenv git tree wget' was successful"
 # Install latest version of Terraform
 echo "----------------- Checking latest terraform version -----------------"
 
 latest_terraform_version=$(curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep "tag_name" | cut -d '"' -f 4 | awk -F 'v' '{print $2}')
 
-echo "Installing latest stable release of Terraform: $latest_terraform_version"
+echo "----------------- Installing latest stable release of Terraform: $latest_terraform_version-----------------"
 tfenv use $latest_terraform_version
+# Check command success
+check_command_success
+# Echo to user
+echo "Terraform installation was successful"
 
-# Starship 
-echo "Configure Starship"
-
+###############################################################################################
+# Starship
+echo "----------------- Configuring Starship.toml----------------- "
+###############################################################################################
 # eval "$(starship init zsh)"
 mkdir -p ~/.config && touch ~/.config/starship.toml
+# Check command success
+check_command_success
+# Echo to user
+echo "~/.config/starship.toml created successfully"
 
-# Define the content to be added
+# Define the content to be added to starship
 content="# Get editor completions based on the config schema
 \"\$schema\" = 'https://starship.rs/config-schema.json'
 
@@ -50,8 +63,7 @@ disabled = true
 
 # Append the content to the config.toml file
 echo "$content" >> ~/.config/starship.toml
-
 # Check command success
 check_command_success
-
+# Echo to user
 echo "Starship configuration complete: ~/.config/starship.toml"
