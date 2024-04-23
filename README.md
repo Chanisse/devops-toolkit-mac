@@ -139,13 +139,10 @@ Commitizen is a command-line tool that helps developers write consistent commit 
 
 **Best practice**
 
-`cz bump` - Creates a tag.
+Change into a git directory
 
-`cz c` - Creates a commit.
+`cz init` - To initialise commitizen. Alteranaivtly you can copy an example of the file below.
 
-See basic features for Commitizen [here](https://commitizen-tools.github.io/commitizen/getting_started/).
-
-Basic .toml
 ```
 [tool.commitizen]
 name = "cz_conventional_commits"
@@ -154,6 +151,12 @@ version = "0.0.1"
 update_changelog_on_bump = true
 major_version_zero = true
 ```
+
+`cz bump` - Creates a tag.
+
+`cz c` - Creates a commit.
+
+See basic features for Commitizen [here](https://commitizen-tools.github.io/commitizen/getting_started/).
 
 #### `pyenv`
 
