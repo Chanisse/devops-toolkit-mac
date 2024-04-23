@@ -17,7 +17,7 @@ check_command_success() {
 # Devops toolkit installation
 echo "----------------- Starting Devops toolkit installation...----------------- "
 ###############################################################################################
-brew install tfenv starship pre-commit pyenv git tree wget
+brew install tfenv starship pre-commit pyenv git tree wget commitizen
 # Check command success
 check_command_success
 # Echo to user
