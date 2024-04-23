@@ -6,25 +6,41 @@ This repository is intended to accelerate a developers local setup by:
 3. Providing some basic best practices when using the tools.
 
 ## Table of contents
+
 - [Section 1 - Automation](#section-1---automated-actions)
-  - [One click solution for linux command line tools](#one-click-solution-for-linux-command-line-tools-via-homebrew)
+
+  - [One click solution for linux command line tools]
+  (#one-click-solution-for-linux-command-line-tools-via-homebrew)
+
   - [Tools](#tools)
+
   - [Best practices](#best-practices)
+
     - [tfenv](#tfenv)
+
     - [starship](#starship)
+
     - [pre-commit](#pre-commit)
+
+    - [commitizen](#commitizen)
+
     - [pyenv](#pyenv)
+
     - [git](#git)
+
 - [Section 2 - Guides](#section-2---guides)
+
   - [oh-my-zsh](#oh-my-zsh)
 
 
-# Section 1 - Automated actions 
+# Section 1 - Automated actions
 
 # One click solution for linux command line tools via homebrew
+
 Run the script to automate the installation and configuration of linux ocmmand line tools
 
-### Pre-requisites 
+### Pre-requisites
+
 - Install Homebrew : https://brew.sh/
 
 Install homebrew for Mac:
@@ -34,16 +50,19 @@ Install homebrew for Mac:
 ```
 
 ### Usage
+
 ```
 bash brew-install.sh
 ```
 
 ### Tools
+
 | Tool     | Description                                                                      | About                                                                       | Automated action                     |
 |----------|----------------------------------------------------------------------------------|------------------------------------------------------------------------------|----------------------------------|
 | tfenv    | Terraform version manager                                                        | `tfenv` allows you to switch between versions                                | Installs the latest stable version of Terraform and enables |
 | Starship | The minimal, blazing-fast, and infinitely customizable prompt for any shell!     | `Starship` provides a customizable prompt with information you need          | Installs starship and configures a base config file `~/.config/starship.toml` |
 | pre-commit| A framework for managing and maintaining pre-commit hooks                       | `pre-commit` manages pre-commit hooks for various tasks like linting, formatting, and more | Installs pre-commit|
+| commitizen| A tool that helps standardises commit messages following the Conventional Commits specification                       | `cz` defines a set of rules for creating descriptive and standardized commit messages | Installs commitizen|
 | pyenv    | Python version manager                                                            | `pyenv` lets you easily switch between multiple versions of Python            | Installs pyenv. |
 | git      | Distributed version control system                                                | `git` is a widely-used version control system                                | Installs git |
 | tree     | Display directory structure as a tree                                            | `tree` shows the directory structure in a tree-like format                   | Installs tree |
@@ -61,6 +80,7 @@ When juggling projects for different clients or projects, you may need various T
 When using tfenv, it's recommended to specify the Terraform version in your project's .terraform-version file. This ensures consistent Terraform versions across environments and makes it easier for team members to use the correct version.
 
 #### `Starship`
+
 Starship is shell prompt that shows information you need while you're working in your terminal. You can configure this to match your individual workstyle as a developer.
 
 Default config file
@@ -113,6 +133,31 @@ When setting up pre-commit, regularly update the hooks and dependencies to benef
 pre-commit autoupdate
 ```
 
+#### `Commitizen`
+
+Commitizen is a command-line tool that helps developers write consistent commit messages according to the Conventional Commits specification.
+
+**Best practice**
+
+Change into a git directory
+
+`cz init` - To initialise commitizen. Alteranaivtly you can copy an example of the file below.
+
+```
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version = "0.0.1"
+update_changelog_on_bump = true
+major_version_zero = true
+```
+
+`cz bump` - Creates a tag.
+
+`cz c` - Creates a commit.
+
+See basic features for Commitizen [here](https://commitizen-tools.github.io/commitizen/getting_started/).
+
 #### `pyenv`
 
 Since some of your local MacOS system tools rely on python, you should avoid interferring with python. pyenv will allow you to manage multiple Python versions.
@@ -128,12 +173,11 @@ See more info for git [here](https://docs.github.com/en/get-started/using-git).
 
 Utilise feature branches and pull requests for new features or fixes to maintain a clean and organized repository.
 
-
 ## Section 2 - Guides
 
 ### Oh my zsh
 
-A framework for managing your zsh configuration. 
+A framework for managing your zsh configuration.
 
 Install oh-my-zsh using curl and follow the prompts:
 
