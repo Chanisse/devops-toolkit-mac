@@ -9,8 +9,7 @@ This repository is intended to accelerate a developers local setup by:
 
 - [Section 1 - Automation](#section-1---automated-actions)
 
-  - [One click solution for linux command line tools]
-  (#one-click-solution-for-linux-command-line-tools-via-homebrew)
+  - [One click solution for linux command line tools](#one-click-solution-for-linux-command-line-tools-via-homebrew)
 
   - [Tools](#tools)
 
